@@ -9,7 +9,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
-        return view('products.index', ['products' => Product::latest()->get()]);
+        return view('products.index', ['products' => Product::latest()->paginate(2)]);
     }
 
     public function create()
